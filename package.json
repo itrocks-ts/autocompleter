@@ -16,19 +16,8 @@
 	],
 	"homepage": "https://it.rocks",
 	"keywords": [
-		"carriage return",
-		"autocompleter",
-		"fix",
-		"fixed",
 		"front-end",
-		"it.rocks",
-		"line feed",
-		"line break",
-		"pre",
-		"raw",
-		"style",
-		"text",
-		"white-space"
+		"it.rocks"
 	],
 	"license": "ISC",
 	"module": "./autocompleter.js",
@@ -42,5 +31,5 @@
 	},
 	"type": "module",
 	"types": "./autocompleter.d.ts",
-	"version": "0.0.3"
+	"version": "0.0.4"
 }
