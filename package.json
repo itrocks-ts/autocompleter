@@ -1,0 +1,46 @@
+{
+	"author": {
+		"name": "Baptiste Pillot",
+		"email": "baptiste@pillot.fr"
+	},
+	"description": "Respectful autocompleter: avoids <div>, respects white-space: pre* styles line breaks",
+	"devDependencies": {
+		"@types/node": "^22.9",
+		"typescript": "5.6"
+	},
+	"files": [
+		"LICENSE",
+		"README.md",
+		"*.d.ts",
+		"*.js"
+	],
+	"homepage": "https://it.rocks",
+	"keywords": [
+		"carriage return",
+		"autocompleter",
+		"fix",
+		"fixed",
+		"front-end",
+		"it.rocks",
+		"line feed",
+		"line break",
+		"pre",
+		"raw",
+		"style",
+		"text",
+		"white-space"
+	],
+	"license": "ISC",
+	"module": "./autocompleter.js",
+	"name": "@itrocks/autocompleter",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/itrocks-ts/autocompleter.git"
+	},
+	"scripts": {
+		"build": "tsc"
+	},
+	"type": "module",
+	"types": "./autocompleter.d.ts",
+	"version": "0.0.1"
+}
