@@ -7,7 +7,7 @@ type Item = {
 	value: number
 }
 
-export default function autoCompleter(input: HTMLInputElement)
+export function autoCompleter(input: HTMLInputElement)
 {
 	loadCss('/node_modules/autocompleter/autocomplete.css')
 	loadCss('/node_modules/@itrocks/autocompleter/autocompleter.css')
