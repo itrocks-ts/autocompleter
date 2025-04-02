@@ -33,20 +33,18 @@ export function autoCompleter(input: HTMLInputElement)
 
 		onSelect: (item: Item, input: HTMLInputElement | HTMLTextAreaElement) =>
 		{
-			if (item.value) {
-				if (input.nextElementSibling instanceof HTMLInputElement) {
-					input.nextElementSibling.value = item.value + ''
-				}
-				else {
-					let dotPosition = input.id.lastIndexOf('.')
-					const name = (dotPosition < 0) ? input.id : input.id.slice(0, dotPosition)
-					input.id = input.name = name + '.' + item.value
-				}
+			// value
+			if (input.nextElementSibling instanceof HTMLInputElement) {
+				input.nextElementSibling.value = item.value + ''
 			}
-			if (item.label) {
-				input.value = item.label
-				input.dispatchEvent(new Event('input', { cancelable: true }))
+			else {
+				let dotPosition = input.id.lastIndexOf('.')
+				const name = (dotPosition < 0) ? input.id : input.id.slice(0, dotPosition)
+				input.id = input.name = name + '.' + item.value
 			}
+			// label
+			input.value = item.label
+			input.dispatchEvent(new Event('input', { cancelable: true }))
 		},
 
 		preventSubmit: PreventSubmit.OnSelect
