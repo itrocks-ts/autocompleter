@@ -20,7 +20,7 @@ export function autoCompleter(input: HTMLInputElement)
 			const dataFetch = input.dataset.fetch ?? input.closest<HTMLElement>('[data-fetch]')?.dataset.fetch
 			const requestInit: RequestInit = { headers: { Accept: 'application/json' } }
 			const summaryRoute = dataFetch + '?startsWith=' + text
-			fetch(summaryRoute, requestInit).then(response => response.text()).then((json) => {
+			fetch(summaryRoute, requestInit).then(response => response.text()).then(json => {
 				const summary: [string, string][] = JSON.parse(json)
 				const startsWith  = input.value.toLowerCase()
 				const suggestions = summary.map(([id, summary]) => ({ label: summary, value: +id }))
@@ -35,12 +35,12 @@ export function autoCompleter(input: HTMLInputElement)
 		{
 			// value
 			if (input.nextElementSibling instanceof HTMLInputElement) {
-				input.nextElementSibling.value = item.value + ''
+				input.nextElementSibling.value = '' + item.value
 			}
 			else {
 				let dotPosition = input.id.lastIndexOf('.')
-				const name = (dotPosition < 0) ? input.id : input.id.slice(0, dotPosition)
-				input.id = input.name = name + '.' + item.value
+				const name      = (dotPosition < 0) ? input.id : input.id.slice(0, dotPosition)
+				input.id        = input.name = name + '.' + item.value
 			}
 			// label
 			input.value = item.label
