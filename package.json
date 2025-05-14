@@ -6,6 +6,7 @@
 	"description": "Simplifies the integration of the autocompleter component into a web page",
 	"devDependencies": {
 		"@types/node": "^22.9",
+		"sass": "^1.83",
 		"typescript": "~5.8"
 	},
 	"files": [
@@ -27,9 +28,10 @@
 		"url": "git+https://github.com/itrocks-ts/autocompleter.git"
 	},
 	"scripts": {
-		"build": "rsync -aP ../../autocompleter/autocomplete.d.ts ../../autocompleter/autocomplete.es.d.ts && tsc"
+		"build": "npm run build:copy && sass . && tsc",
+		"build:copy": "rsync -aP ../../autocompleter/autocomplete.d.ts ../../autocompleter/autocomplete.es.d.ts"
 	},
 	"type": "module",
 	"types": "./autocompleter.d.ts",
-	"version": "0.0.9"
+	"version": "0.0.10"
 }
